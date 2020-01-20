@@ -47,3 +47,38 @@ $("#add-train-btn").on("click", function(event) {
     $("#time-input").val("");
     $("#frequency-input").val("");
   });
+
+  firebase.database().ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+    // Store everything into a variable.
+    var trainName = childSnapshot.val().name;
+    var trainDest = childSnapshot.val().dest;
+    var trainTime = childSnapshot.val().time;
+    var trainFreq = childSnapshot.val().freq;
+    
+    // Employee Info
+    console.log(trainName);
+    console.log(trainDest);
+    console.log(trainTime);
+    console.log(trainFreq);
+    // Prettify the employee start
+   // var empStartPretty = moment.unix(empStart).format("MM/DD/YYYY");
+    // Calculate the months worked using hardcore math
+    // To calculate the months worked
+   // var empMonths = moment().diff(moment(empStart, "X"), "months");
+   // console.log(empMonths);
+    // Calculate the total billed rate
+   // var empBilled = empMonths * empRate;
+   // console.log(empBilled);
+    // Create the new row
+    var newRow = $("<tr>").append(
+      $("<td>").text(trainName),
+      $("<td>").text(trainDest),
+      $("<td>").text(trainTime),
+      $("<td>").text(trainFreq),
+     // $("<td>").text(empRate),
+     // $("<td>").text(empBilled)
+    );
+    // Append the new row to the table
+    $("#employee-table > tbody").append(newRow);
+  });

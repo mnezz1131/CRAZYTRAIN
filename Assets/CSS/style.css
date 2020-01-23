@@ -1,14 +1,40 @@
 body {
-    background-image: url(../Images/3efb6ab7f4c2c45cc8d5d8a7b46f5877.jpg);
+    background-image: url(../Images/q85U0F.jpg);
 }
 
-.jumbotron {
-    width: 75%;
-    margin: 0 auto;
-    background-image: url(../Images/Capture.JPG);
-    /*background-size: auto;*/
+.image-container {
+    position: relative;
+    text-align: center;
+}
 
-    /* font-family: 'Smokum', cursive;*/
+.centered1 {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centered2 {
+    position: absolute;
+    top: 26%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.image {
+    height: 275px;
+    width: 1120px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+h1 {
     font-family: 'Ewert', cursive;
     font-size: 60px;
     color: black;
@@ -18,20 +44,118 @@ body {
         1px -1px 0 rgb(243, 6, 6),
         -1px 1px 0 rgb(247, 4, 4),
         1px 1px 0 rgb(241, 6, 6);
-    margin-bottom: 15px;
 }
+hr {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 3px;
+    background-color:rgb(7, 7, 6);
+   /* opacity: 0.5;*/
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+ 
 
 .lead {
-    font-size: 35px;
+    font-family: 'Ewert', cursive;
+    font-size: 55px;
     text-shadow: none;
+    text-shadow:
+        -1px -1px 0 rgb(243, 143, 12),
+        1px -1px 0 rgb(243, 143, 12),
+        -1px 1px 0 rgb(243, 143, 12),
+        1px 1px 0 rgb(243, 143, 12);
 }
 
 .card-header {
-    background-color: rgb(158, 141, 121);
+    /* background-color: rgb(158, 141, 121);*/
     text-align: center;
     font-weight: 800;
-    font-size: larger;
-  
+    font-size: 40px;
     padding: 10PX;
-   
+    font-family: 'Smokum', cursive;
+}
+
+.card-body {
+    background-image: url(../Images/4mWcu5.jpg);
+}
+
+
+@media only screen and (max-width: 1445px) {
+    h1 {
+        font-family: 'Ewert', cursive;
+        font-size: 50px;
+        color: black;
+        text-align: center;
+        text-shadow:
+            -1px -1px 0 rgb(243, 12, 12),
+            1px -1px 0 rgb(243, 6, 6),
+            -1px 1px 0 rgb(247, 4, 4),
+            1px 1px 0 rgb(241, 6, 6);
+    }
+
+    .lead {
+        font-family: 'Ewert', cursive;
+        font-size: 45px;
+        text-shadow: none;
+        text-shadow:
+            -1px -1px 0 rgb(243, 143, 12),
+            1px -1px 0 rgb(243, 143, 12),
+            -1px 1px 0 rgb(243, 143, 12),
+            1px 1px 0 rgb(243, 143, 12);
+    }
+
+    @media only screen and (max-width: 1200px) {
+        h1 {
+            font-family: 'Ewert', cursive;
+            font-size: 45px;
+            color: black;
+            text-align: center;
+            text-shadow:
+                -1px -1px 0 rgb(243, 12, 12),
+                1px -1px 0 rgb(243, 6, 6),
+                -1px 1px 0 rgb(247, 4, 4),
+                1px 1px 0 rgb(241, 6, 6);
+        }
+    
+        .lead {
+            font-family: 'Ewert', cursive;
+            font-size: 40px;
+            text-shadow: none;
+            text-shadow:
+                -1px -1px 0 rgb(243, 143, 12),
+                1px -1px 0 rgb(243, 143, 12),
+                -1px 1px 0 rgb(243, 143, 12),
+                1px 1px 0 rgb(243, 143, 12);
+        }
+
+        @media only screen and (max-width: 1060px) {
+            h1 {
+                font-family: 'Ewert', cursive;
+                font-size: 40px;
+                color: black;
+                text-align: center;
+                text-shadow:
+                    -1px -1px 0 rgb(243, 12, 12),
+                    1px -1px 0 rgb(243, 6, 6),
+                    -1px 1px 0 rgb(247, 4, 4),
+                    1px 1px 0 rgb(241, 6, 6);
+            }
+        
+            .lead {
+                font-family: 'Ewert', cursive;
+                font-size: 35px;
+                text-shadow: none;
+                text-shadow:
+                    -1px -1px 0 rgb(243, 143, 12),
+                    1px -1px 0 rgb(243, 143, 12),
+                    -1px 1px 0 rgb(243, 143, 12),
+                    1px 1px 0 rgb(243, 143, 12);
+            }
+
+
+
 }

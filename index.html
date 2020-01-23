@@ -14,9 +14,12 @@
 </head>
 
 <body>
-    <div class="jumbotron">
-        <h1 class="display-4">Train Kept a Rollin</h1>
-        <p class="lead">The Train kept a-rolling All Night Long</p>
+   <!-- <div class="jumbotron img-fluid. max-width: 100%" >-->
+       <p class = "image-containter">
+        <img src="../CRAZYTRAIN/Assets/Images/very_old_paper_texture___free_for_personal_use_by_moonlight4ngel-d2ytt1r.png" alt="old" class="image">
+        <h1 class="display centered1">Locomotive Breath Train Lines</h1>
+        <hr>
+        <p class="lead centered2">Trains Kept a Rollin</p>
     </div>
 
     <div class="container">
@@ -24,14 +27,14 @@
             <div class="col-md-12">
                 <!-- Current Employees-->
                 <div class="card mb-4">
-                    <div class="card-header">Heave and a Ho Train Lines Schedule</div>
+                    <div class="card-header alert-dark">Locomotive Breath Train Lines Schedule</div>
                     <div class="card-body">
                         <table class="table table-sm table-hover table-striped" id='myTable'>
                             <thead>
                                 <tr>
                                     <th scope="col">Train Name</th>
                                     <th scope="col">Destination</th>
-                                    <th scope="col">Frequency</th>
+                                    <th scope="col">Frequency (Min)</th>
                                     <th scope="col">Next Arrival</th>
                                     <th scope="col">Minutes Away</th>
 
@@ -54,25 +57,25 @@
     <!-- Add A Train -->
     <div class="container">
         <div class="card mb-4">
-            <div class="card-header">Add Train To The Scheule</div>
+            <div class="card-header alert-dark">Add Train To The Scheule</div>
             <div class="card-body">
                 <!-- Entry Form -->
                 <form>
                     <div class="form-group">
                         <label for="name">Train Name</label>
-                        <input class="form-control" id="name-input" placeholder="Locomotive Breath" type="text">
+                        <input class="form-control" id="name-input" placeholder="Crazy Train" type="text">
                     </div>
                     <div class="form-group">
                         <label for="destination">Destination</label>
                         <input class="form-control" id="destination-input" placeholder="Off The Rails" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label for="time">First Train Time (hh:mm:ss)</label>
-                        <input class="form-control" id="time-input" placeholder="" type="time">
-                    </div>
+                    </div> 
                     <div class="form-group">
                         <label for="frequency">Frequency</label>
                         <input class="form-control" id="frequency-input" placeholder="All Night Long" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">First Train Time (H:mm - Military Time)</label>
+                        <input class="form-control" id="time-input" placeholder="12:00" type="time" value="12:00:00">
                     </div>
                     <button class="btn btn-primary float-left" id="add-train-btn">Submit</button>
                 </form>

@@ -32,7 +32,7 @@ $("#add-train-btn").on("click", function(event) {
       dest: trainDest,
       time: trainTime,
       freq: trainFreq,
-      added: firebase.database.ServerValue.TIMESTAMP
+      added: firebase.database.ServerValue.TIMESTAMP,  
     };
     // Uploads employee data to the database
    firebase.database().ref().push(newTrains);
@@ -42,7 +42,10 @@ $("#add-train-btn").on("click", function(event) {
     console.log(newTrains.time);
     console.log(newTrains.freq);
     console.log(newTrains.added);
+    console.log(newTrains.next);
+    console.log(newTrains.away);
     alert("Train successfully added");
+    
     // Clears all of the text-boxes
     $("#name-input").val("");
     $("#destination-input").val("");
@@ -50,15 +53,17 @@ $("#add-train-btn").on("click", function(event) {
     $("#frequency-input").val("");
   });
 
- 
-
   firebase.database().ref().on("child_added", function(childSnapshot) {
     console.log(childSnapshot.val());
     // Store everything into a variable.
     var trainName = childSnapshot.val().name;
     var trainDest = childSnapshot.val().dest;
     var trainFreq = childSnapshot.val().freq;
+    var trainNext = childSnapshot.val().next;
+    var trainAway = childSnapshot.val().away;
     var trainTime = childSnapshot.val().time;
+  
+   
    
     
     // Train Info
@@ -66,7 +71,8 @@ $("#add-train-btn").on("click", function(event) {
     console.log(trainDest);
     console.log(trainTime);
     console.log(trainFreq);
-    
+    console.log(trainNext);
+    console.log(trainAway);
 
     var currentDate =moment();
     var currentDate1 =moment().format("H:mm");
@@ -95,12 +101,12 @@ $("#add-train-btn").on("click", function(event) {
     console.log(tRemainder);
 
     // Minute Until Train
-    var tMinutesTillTrain = trainFreq - tRemainder;
-    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+    var trainAway = trainFreq - tRemainder;
+    console.log("MINUTES TILL TRAIN: " + trainAway);
 
     // Next Train
-    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+    var trainNext = moment().add(trainAway, "minutes");
+    console.log("ARRIVAL TIME: " + moment(trainNext).format("hh:mm"));
    
 
    
@@ -108,7 +114,8 @@ $("#add-train-btn").on("click", function(event) {
       $("<td>").text(trainName),
       $("<td>").text(trainDest),
       $("<td>").text(trainFreq),    
-      //$("<td>").text(),
+      $("<td>").text(trainNext),
+      $("<td>").text(trainAway),
     
     );
     // Append the new row to the table
